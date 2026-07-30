@@ -108,6 +108,12 @@ async function loginUserController(req, res) {
 async function logoutUserController(req, res) {
     const token = req.cookies.token
 
+    if(!token){
+        res.status(401).json({
+            message:"token not found"
+        })
+    }
+
     if (token) {
         await tokenBlacklistModel.create({ token })
     }

@@ -3,7 +3,7 @@ import axios from "axios"
 
 const api = axios.create({
     baseURL: "http://localhost:3000",
-    withCredentials: true // to get access of cookies as axios by default dont allow it.
+    withCredentials: true
 })
 
 export async function register({ username, email, password }) {
